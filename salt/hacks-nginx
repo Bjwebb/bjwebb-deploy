@@ -1,0 +1,27 @@
+proxy_cache_path  /var/cache/nginx levels=1:2 keys_zone=master:10m inactive=7d max_size=1g;
+proxy_temp_path /var/tmp/nginx;
+
+server {
+    listen 80;
+    server_name hacks.bjwebb.co.uk www.hacks.bjwebb.co.uk;
+    access_log /var/log/nginx/hacks.access.log;
+    error_log /var/log/nginx/hacks.error.log;
+
+    location / {
+        uwsgi_pass unix:/run/uwsgi/app/hacks/socket;
+        include uwsgi_params;
+    }
+
+    location /bus/ {
+        uwsgi_pass unix:/run/uwsgi/app/hacks/socket;
+        include uwsgi_params;
+        proxy_cache             master;
+        #proxy_cache_key         $$scheme$$host$$uri$$is_args$$args;
+        proxy_cache_valid       200  7d;
+        proxy_cache_use_stale   error timeout invalid_header;
+    }
+
+    location /media/ {
+        alias /home/bjwebb/hacks/media/; 
+    }
+}
