@@ -10,6 +10,7 @@ basic-server-deps:
     pkg.installed:
         - pkgs:
             - unattended-upgrades
+            - git
 
 # https://wiki.debian.org/UnattendedUpgrades
 /etc/apt/apt.conf.d/50auto-upgrades:
@@ -22,6 +23,7 @@ bjwebb:
     - home: /home/bjwebb
     - groups:
       - sudo
+    - shell: /bin/bash
 
 /home/bjwebb/.ssh/authorized_keys:
   file.append:

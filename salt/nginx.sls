@@ -12,3 +12,4 @@ nginx-service:
     - enable: True
     - watch:
       - file: /etc/nginx/sites-enabled/*
+      - file: /etc/nginx/sites-available/*

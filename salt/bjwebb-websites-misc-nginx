@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name caprenter.co.uk www.caprenter.co.uk;
+    access_log /var/log/nginx/caprenter.access.log;
+    error_log /var/log/nginx/caprenter.error.log;
+    root /home/bjwebb/bjwebb-websites-misc/caprenter;
+}
+server {
+    listen 80;
+    server_name arstneio.com www.arstneio.com;
+    access_log /var/log/nginx/arstneio.access.log;
+    error_log /var/log/nginx/arstneio.error.log;
+    root /home/bjwebb/bjwebb-websites-misc/arstneio;
+}
