@@ -1,0 +1,8 @@
+24c24
+< #   mail_location = maildir:~/Maildir
+---
+> mail_location = maildir:~/Maildir
+30c30
+< mail_location = mbox:~/mail:INBOX=/var/mail/%u
+---
+> #mail_location = mbox:~/mail:INBOX=/var/mail/%u
