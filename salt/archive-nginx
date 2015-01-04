@@ -1,0 +1,12 @@
+{% set sitename = 'archive' %}
+server {
+    listen 80;
+    server_name archive.freedomdreams.co.uk www.archive.freedomdreams.co.uk;
+    access_log /var/log/nginx/{{ sitename }}.access.log;
+    error_log /var/log/nginx/{{ sitename }}.error.log;
+    root /home/bjwebb/{{ sitename }};
+    location / {
+        index  index.html index.htm;
+        autoindex on;
+    }
+}

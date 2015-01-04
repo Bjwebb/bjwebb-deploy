@@ -30,6 +30,7 @@ https://gitorious.org/bjwebb-co-uk/django-bjwebb-hacks.git:
 /etc/nginx/sites-available/hacks:
   file.managed:
     - source: salt://hacks-nginx
+    - template: jinja
 
 /etc/uwsgi/apps-available/hacks.ini:
   file.managed:

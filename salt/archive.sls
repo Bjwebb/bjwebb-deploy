@@ -1,13 +1,13 @@
 include:
   - nginx
 
-https://github.com/Bjwebb/bjwebb-websites-misc.git:
+bjwebb@bjwebb.co.uk:~/git/old-website-archive.git:
   git.latest:
     - rev: master
     - user: bjwebb
-    - target: /home/bjwebb/bjwebb-websites-misc/
+    - target: /home/bjwebb/archive/
 
-{% set configname = 'bjwebb-websites-misc' %}
+{% set configname = 'archive' %}
 
 /etc/nginx/sites-available/{{ configname }}:
   file.managed:

@@ -1,11 +1,13 @@
 proxy_cache_path  /var/cache/nginx levels=1:2 keys_zone=master:10m inactive=7d max_size=1g;
 proxy_temp_path /var/tmp/nginx;
 
+{% set sitename = 'hacks' %}
+
 server {
     listen 80;
-    server_name hacks.bjwebb.co.uk www.hacks.bjwebb.co.uk;
-    access_log /var/log/nginx/hacks.access.log;
-    error_log /var/log/nginx/hacks.error.log;
+    server_name {{ sitename }}.bjwebb.co.uk www.{{ sitename }}.bjwebb.co.uk;
+    access_log /var/log/nginx/{{ sitename }}.access.log;
+    error_log /var/log/nginx/{{ sitename }}.error.log;
 
     location / {
         uwsgi_pass unix:/run/uwsgi/app/hacks/socket;
