@@ -11,6 +11,7 @@ basic-server-deps:
         - pkgs:
             - unattended-upgrades
             - git
+            - screen
 
 # https://wiki.debian.org/UnattendedUpgrades
 /etc/apt/apt.conf.d/50auto-upgrades:
