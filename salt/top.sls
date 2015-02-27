@@ -3,6 +3,7 @@ base:
     - base
   'hacks':
     - hacks
+    - saltserver
   'gabbleduck':
     - bjwebb-default
     - bjwebb-websites-misc
