@@ -18,7 +18,7 @@ salt-pkgs:
 
   cmd.run:
     - name: wget -q -O- "http://debian.saltstack.com/debian-salt-team-joehealy.gpg.key" | apt-key add -
-    - unless: 'apt-key list | grep debian-salt-team-joehealy'
+    - unless: 'apt-key list | grep joehealy'
 
   pkg.installed:
     - pkgs:
@@ -29,3 +29,15 @@ salt-pkgs:
 
   service.disabled:
     - name: salt-master
+
+user.name:
+  git.config:
+    - value: "\"Ben Webb\""
+    - user: root
+    - is_global: True
+
+user.email:
+  git.config:
+    - value: bjwebb67@googlemail.com
+    - user: root
+    - is_global: True
