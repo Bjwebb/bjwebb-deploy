@@ -12,6 +12,7 @@ basic-server-deps:
             - unattended-upgrades
             - git
             - screen
+            - vim
 
 # https://wiki.debian.org/UnattendedUpgrades
 /etc/apt/apt.conf.d/50auto-upgrades:
