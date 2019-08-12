@@ -1,3 +1,4 @@
-hacks: 178.62.82.87
-gabbleduck: 213.138.101.10
-#logserver: 178.62.107.138
+gabbleduck:
+    host: 109.107.35.255
+    user: debian
+    sudo: True
